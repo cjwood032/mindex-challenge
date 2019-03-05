@@ -1,0 +1,43 @@
+.employee{
+    display: inline-flex;
+    padding: 1em;
+    max-width: 100%;
+    height: 50%; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+.employee:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+}
+.header{
+    height: 50%;
+    padding: 5px;
+}
+.name{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5em;
+    transition: 0.1s;
+}
+.name:hover{
+    transform: scale(1.1);
+    
+}
+dl {
+    margin-bottom: 0px;
+    height: 100%;
+    text-align: center;
+}
+i{
+    color: darkblue
+}
+ul{
+    list-style-type: none;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+}
+.reporting{
+    height: 50%;
+    width: 100%;
+    position: center;
+}

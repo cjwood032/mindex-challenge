@@ -1,0 +1,25 @@
+<mat-card class="employee">
+  <div class = "header">
+    <mat-card-header class="header">
+      <mat-card-title class="name"><b>{{employee.lastName}},<br>{{employee.firstName}}</b></mat-card-title>
+
+      <mat-card-subtitle>ID: {{employee.id}}</mat-card-subtitle>
+    </mat-card-header>
+  </div>
+  <mat-card-content>
+    <div class = "tab">
+    <dl>
+      <!--Compensation: ${{employee.compensation}} <br>-->
+      <i>Job Title:</i> <br>{{employee.position}}<br>
+      <dt><i>{{totalReports}} Reportees</i></dt>
+      <div class = "reporting" *ngIf="totalReports>0"><i>{{employee.directReports.length}} Direct Reportees</i>
+      <ul className="reportee"><li *ngFor = "let individual of employee.directReports">
+        {{individual}} <button id="removal" (click)="letGo(individual)">X</button><button (click)="update(individual)">e</button>
+      </li></ul></div>
+    </dl>
+  </div>
+    <ng-container *ngFor="let employee of employees" >
+      <li></li>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
