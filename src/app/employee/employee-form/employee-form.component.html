@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Edit</h1>
+    <form [formGroup] = "employeeForm">
+      <div class="form-group">
+        <label>
+          First Name:
+          <input type="text" formControlName="firstName">
+        </label>
+      
+        <label>
+          Last Name:
+          <input type="text" formControlName="lastName">
+        </label>
+        <label>
+          Position:
+          <input type="text" formControlName="lastName">
+        </label>
+        <label>
+          Compensation:
+          <input type="number" formControlName="lastName">
+        </label>
+        <button type="submit" >Submit</button>
+      </div>
+    </form>
+</div>
+<!--[disabled]="!profileForm.valid"-->

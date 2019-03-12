@@ -14,7 +14,7 @@
       
       <div class = "reporting" *ngIf="totalReports>0"><i>{{totalReports}} Reportees</i>
       <ul className="reportee"><li *ngFor = "let individual of reportees">
-        {{individual.firstName}} {{individual.lastName}}<button id="removal" (click)="letGo(individual)">X</button><button (click)="update(individual)">e</button>
+        {{individual.firstName}} {{individual.lastName}}<button id="removal" (click)="letGo(individual)">X</button><button (click)="openForm(individual)">e</button>
       </li></ul></div>
     </dl>
   </div>

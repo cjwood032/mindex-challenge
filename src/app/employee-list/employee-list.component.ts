@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {catchError, map, reduce} from 'rxjs/operators';
-
 import {Employee} from '../employee';
 import {EmployeeService} from '../employee.service';
 
@@ -28,6 +27,10 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.remove($event)
     this.employees=this.employees.filter(function(emp){ return emp.id !=$event.id})
     console.log($event.firstName + " " + $event.lastName +' has been removed')
+  }
+  editEmployee($event){
+    console.log("parent")
+    
   }
   private handleError(e: Error | any): string {
     console.error(e);
