@@ -1,5 +1,5 @@
 import {Component,OnInit, Input} from '@angular/core';
-import  {Observable, from} from 'rxjs';
+import  {Observable} from 'rxjs';
 import {Employee} from '../employee';
 import {EmployeeService} from '../employee.service'
 
@@ -11,10 +11,10 @@ import {EmployeeService} from '../employee.service'
 export class EmployeeComponent implements OnInit{
   @Input() employee: Employee;
   @Input() totalReports: number;
-  @Input() reportees: Array<Employee>;
+  reportees: Array<Employee>;
   constructor(private employeeService:EmployeeService) {
     this.totalReports = 0;
-    this.reportees=[]
+    this.reportees =[]
   } 
   ngOnInit(){
     this.setReports(this.employee)
@@ -33,12 +33,8 @@ export class EmployeeComponent implements OnInit{
     }
     if (!employee.directReports){return}
     employee.directReports.forEach( id => {
-    //  (this.employeeService.get(id)).subscribe({
-    //    next(response) { console.log(response);
-    //      return response}
-    //  })
-      indirectReports(id)
-      this.totalReports++
+    indirectReports(id)
+    this.totalReports++
     })
     
   
