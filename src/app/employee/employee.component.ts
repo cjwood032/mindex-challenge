@@ -40,7 +40,7 @@ export class EmployeeComponent implements OnInit{
   
   }
   letGo(employee) {
-    if(confirm("Are you sure you would like to let them go?")){
+    if(confirm("Are you sure you want to delete "+ employee.firstName +" "+ employee.lastName +"?")){
       this.reportees=this.reportees.filter(function(emp){ return emp !=employee})
       this.deleteEmployee.emit(employee)
   }}

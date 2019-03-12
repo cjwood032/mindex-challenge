@@ -26,6 +26,7 @@ export class EmployeeListComponent implements OnInit {
   }
   deleteEmployee($event){
     this.employeeService.remove($event)
+    this.employees=this.employees.filter(function(emp){ return emp.id !=$event.id})
     console.log($event.firstName + " " + $event.lastName +' has been removed')
   }
   private handleError(e: Error | any): string {
