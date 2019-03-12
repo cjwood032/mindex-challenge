@@ -1,6 +1,6 @@
-.employee-list {
-    
-}
-app-employee {
-    height: 75%;
+
+.grid{
+    background-color: grey;
+    align-items: top;
+    width: 100%;
 }

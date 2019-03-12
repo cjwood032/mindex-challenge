@@ -1,8 +1,8 @@
 .employee{
     display: inline-flex;
     padding: 1em;
-    max-width: 100%;
-    height: 50%; 
+    width: 100%;
+    height: 75%; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.2s;
 }
@@ -12,22 +12,32 @@
 .header{
     height: 50%;
     padding: 5px;
+    width : 50%;
 }
 .name{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.75em;
     transition: 0.1s;
 }
 .name:hover{
     transform: scale(1.1);
     
 }
+.employee-info{
+    width: 50%;
+}
+.tab{
+    width: 50%;
+}
 dl {
     margin-bottom: 0px;
     height: 100%;
     text-align: center;
+    width: 50%;
 }
 i{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.25em;
     color: darkblue
 }
 ul{
@@ -39,5 +49,6 @@ ul{
 .reporting{
     height: 50%;
     width: 100%;
+    text-align: right;
     position: center;
 }
