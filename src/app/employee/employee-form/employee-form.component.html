@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Edit</h1>
-    <form [formGroup] = "employeeForm">
+    <form [formGroup] = "employeeForm" >
       <div class="form-group">
         <label>
           First Name:
@@ -13,13 +13,13 @@
         </label>
         <label>
           Position:
-          <input type="text" formControlName="lastName">
+          <input type="text" formControlName="position">
         </label>
         <label>
           Compensation:
-          <input type="number" formControlName="lastName">
+          <input type="number" formControlName="compensation">
         </label>
-        <button type="submit" >Submit</button>
+        <button type="submit" (click)="onSubmit()" mat-dialog-close>Submit</button>
       </div>
     </form>
 </div>

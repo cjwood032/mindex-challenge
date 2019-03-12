@@ -13,7 +13,7 @@
       <i>Job Title:</i> <br>{{employee.position}}<br>
       
       <div class = "reporting" *ngIf="totalReports>0"><i>{{totalReports}} Reportees</i>
-      <ul className="reportee"><li *ngFor = "let individual of reportees">
+      <ul className="reportee"><li *ngFor = "let individual of reportees" >
         {{individual.firstName}} {{individual.lastName}}<button id="removal" (click)="letGo(individual)">X</button><button (click)="openForm(individual)">e</button>
       </li></ul></div>
     </dl>

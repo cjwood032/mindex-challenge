@@ -16,7 +16,7 @@ export class EmployeeComponent implements OnInit{
   @Output() deleteEmployee = new EventEmitter();
   @Output() editEmployee = new EventEmitter();
   reportees: Array<Employee>;
-  fileNameDialogRef: MatDialogRef<EmployeeFormComponent>;
+  dialogRef: MatDialogRef<EmployeeFormComponent>;
   constructor(private employeeService:EmployeeService, private dialog: MatDialog) {
     this.totalReports = 0;
     this.reportees =[]
@@ -49,8 +49,9 @@ export class EmployeeComponent implements OnInit{
       this.deleteEmployee.emit(employee)
   }}
   openForm(employee){
-    console.log("child")
-    this.fileNameDialogRef = this.dialog.open(EmployeeFormComponent, {data:{
-      Employee: employee}})
+    this.dialogRef = this.dialog.open(EmployeeFormComponent, {data:{
+      employee: employee}})
+      this.dialogRef.componentInstance.updateEmployee.subscribe( data => this.editEmployee.emit(data))
+      
   }
 }

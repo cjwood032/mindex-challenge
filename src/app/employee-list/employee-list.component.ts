@@ -29,7 +29,7 @@ export class EmployeeListComponent implements OnInit {
     console.log($event.firstName + " " + $event.lastName +' has been removed')
   }
   editEmployee($event){
-    console.log("parent")
+    this.employeeService.save($event)
     
   }
   private handleError(e: Error | any): string {
