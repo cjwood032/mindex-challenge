@@ -1,4 +1,4 @@
-import {Component,OnInit, Input} from '@angular/core';
+import {Component,OnInit, Input, EventEmitter, Output} from '@angular/core';
 import  {Observable} from 'rxjs';
 import {Employee} from '../employee';
 import {EmployeeService} from '../employee.service'
@@ -11,6 +11,7 @@ import {EmployeeService} from '../employee.service'
 export class EmployeeComponent implements OnInit{
   @Input() employee: Employee;
   @Input() totalReports: number;
+  @Output() deleteEmployee = new EventEmitter();
   reportees: Array<Employee>;
   constructor(private employeeService:EmployeeService) {
     this.totalReports = 0;
@@ -18,7 +19,6 @@ export class EmployeeComponent implements OnInit{
   } 
   ngOnInit(){
     this.setReports(this.employee)
-    console.log(this.reportees)
   }
   setReports(employee: Employee){
     const indirectReports = (id) => {
@@ -29,19 +29,19 @@ export class EmployeeComponent implements OnInit{
         childEmployee.directReports.forEach(id =>{
           indirectReports(id)
         })
-    })
+      })
     }
     if (!employee.directReports){return}
     employee.directReports.forEach( id => {
-    indirectReports(id)
-    this.totalReports++
+      indirectReports(id)
+      this.totalReports++
     })
     
   
   }
-  letGo(id) {
+  letGo(employee) {
     if(confirm("Are you sure you would like to let them go?")){
-    this.employeeService.remove(id)
-    console.log('the individual has been removed')
+      this.reportees=this.reportees.filter(function(emp){ return emp !=employee})
+      this.deleteEmployee.emit(employee)
   }}
 }

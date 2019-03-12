@@ -24,7 +24,10 @@ export class EmployeeListComponent implements OnInit {
         catchError(this.handleError.bind(this))
       ).subscribe();
   }
-
+  deleteEmployee($event){
+    this.employeeService.remove($event)
+    console.log($event.firstName + " " + $event.lastName +' has been removed')
+  }
   private handleError(e: Error | any): string {
     console.error(e);
     return this.errorMessage = e.message || 'Unable to retrieve employees';
