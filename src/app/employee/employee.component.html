@@ -3,18 +3,18 @@
     <mat-card-header class="header">
       <mat-card-title class="name"><b>{{employee.firstName}} {{employee.lastName}}</b></mat-card-title>
 
-      <mat-card-subtitle>ID: {{employee.id}}</mat-card-subtitle>
+      <mat-card-subtitle>ID: {{employee.id}}<br><i>Job Title:</i> {{employee.position}}<br></mat-card-subtitle>
     </mat-card-header>
   </div>
   <mat-card-content class="employee-info">
     <div class = "tab">
-    <dl>
+   
       <!--Compensation: ${{employee.compensation}} <br>-->
-      <i>Job Title:</i> <br>{{employee.position}}<br>
-    </dl>
+      
+    
       <div class = "reporting" *ngIf="totalReports>0"><i>{{totalReports}} Reportees</i>
       <ul className="reportee"><li *ngFor = "let individual of reportees" >
-        {{individual.firstName}} {{individual.lastName}}<button id="removal" (click)="letGo(individual)">X</button><button (click)="openForm(individual)">e</button>
+        {{individual.firstName}} {{individual.lastName}}<button id="removal" (click)="letGo(individual)"><mat-icon>delete</mat-icon></button><button (click)="openForm(individual)"><mat-icon>edit</mat-icon></button>
       </li></ul></div>
 
     <ng-container *ngFor="let employee of employees" >

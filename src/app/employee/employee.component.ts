@@ -1,6 +1,5 @@
 import {Component,OnInit, Input, EventEmitter, Output} from '@angular/core';
-import  {Observable} from 'rxjs';
-import {MatDialog, MatDialogRef} from '@angular/material';
+import {MatDialog, MatDialogRef, MatIconRegistry} from '@angular/material';
 import {EmployeeFormComponent} from '../employee/employee-form/employee-form.component';
 import {Employee} from '../employee';
 import {EmployeeService} from '../employee.service'
